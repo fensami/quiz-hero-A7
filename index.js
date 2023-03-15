@@ -61,19 +61,23 @@ const displayQuiz = (data) => {
 
   data.forEach((quiz, i) => {
     // console.log(quiz);
-    // const queryContainer = document.createElement('div')
-    // queryContainer.classList.add('quizContainer')
-    quizContainer.innerHTML = `<div class="m-3 py-3 px-4 shadow-sm rounded">
+    const queryContainer = document.createElement('div')
+    queryContainer.classList.add('col')
+    queryContainer.innerHTML = `<div class="m-3 py-3 px-4 shadow-sm rounded">
   <div class="flex items-center">
     <div class="h-8 w-8 bg-green-300 rounded-full flex justify-center items-center text-green-800 mr-3">
       ${i + 1}
-    </div>
+      </div>
+    
     <p class="text-gray-800 text-sm">${quiz.question}</p>
+    
   </div>
   <div class="grid grid-cols-2 gap-4 mt-5">
     ${displayQuizOptions(quiz.options, i)}
   </div>
-</div>`;
+</div>
+`;
+quizContainer.appendChild(queryContainer)
   });
 };
 
@@ -172,7 +176,7 @@ document.getElementById("submit").addEventListener("click", function() {
       ?.map(
         (item) => `<div
       class="flex justify-between items-center border rounded p-2 my-2 shadow-sm">
-      <div>${item.marks}/60</div>
+      <div>${item.marks}/x 0</div>
       <div>${item.status}</div>
       <div>${item.examTime}</div>
       </div>`
