@@ -53,14 +53,12 @@ const loadQuiz = async () => {
 
 // Displaying quiz on quiz page
 const displayQuiz = (data) => {
-  // console.log(data);
   if (!data) {
-    // quizContainer.innerHTML = "";
+    quizContainer.innerHTML = "";
     return;
   }
 
   data.forEach((quiz, i) => {
-    // console.log(quiz);
     const queryContainer = document.createElement('div')
     queryContainer.classList.add('col')
     queryContainer.innerHTML = `<div class="m-3 py-3 px-4 shadow-sm rounded">
@@ -146,9 +144,6 @@ document.getElementById("submit").addEventListener("click", function() {
   // Right side bar/ answer section
   let x = setTimeout(() => {
     showAnswers(answers);
-    console.log(totalMark);
-    // console.log(item.marks);
-    console.log(localStorage.results);
     
     displayResult.innerHTML = `<div
     class="h-[220px] w-[220px] mx-auto mt-8 flex flex-col justify-center border-2 rounded-tr-[50%] rounded-bl-[50%]"
