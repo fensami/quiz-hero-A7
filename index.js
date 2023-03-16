@@ -146,8 +146,10 @@ document.getElementById("submit").addEventListener("click", function() {
   // Right side bar/ answer section
   let x = setTimeout(() => {
     showAnswers(answers);
-    console.log(grade.status);
+    console.log(totalMark);
     // console.log(item.marks);
+    console.log(localStorage.results);
+    
     displayResult.innerHTML = `<div
     class="h-[220px] w-[220px] mx-auto mt-8 flex flex-col justify-center border-2 rounded-tr-[50%] rounded-bl-[50%]"
   >
@@ -174,10 +176,7 @@ document.getElementById("submit").addEventListener("click", function() {
     <div>Grade</div>
     <div>Time</div>
     </div>
-    ${storage
-      ?.reverse()
-      ?.map(
-        (item) => `<div
+    ${storage ?.reverse() ?.map((item) => `<div
       class="flex justify-between items-center border rounded p-2 my-2 shadow-sm">
       <div>${item.marks}</div>
       <div>${item.status}</div>
